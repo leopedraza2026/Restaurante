@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Restaurante El Pollo Feliz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>El Pollo Feliz</h1>
+    <p>Los mejores pollos a la brasa y combos caseros</p>
+    <button id="view-cart-btn" class="cart-btn">Carrito (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <section class="menu-section">
+      <h2>Menú</h2>
+      <div id="menu" class="menu-grid"></div>
+    </section>
+
+    <aside id="cart-panel" class="cart-panel hidden" aria-hidden="true">
+      <h3>Carrito</h3>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Total: $<span id="cart-total">0.00</span></div>
+        <button id="checkout-btn" class="primary">Realizar pedido</button>
+        <button id="clear-cart-btn" class="secondary">Vaciar carrito</button>
+      </div>
+    </aside>
+
+    <section id="order-section" class="order-section hidden">
+      <h2>Pedido</h2>
+      <form id="order-form">
+        <label>
+          Nombre:
+          <input type="text" id="customer-name" required />
+        </label>
+        <label>
+          Teléfono:
+          <input type="tel" id="customer-phone" required />
+        </label>
+        <label>
+          Dirección:
+          <input type="text" id="customer-address" required />
+        </label>
+        <label>
+          Observaciones:
+          <textarea id="customer-notes" rows="3"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="primary">Enviar pedido</button>
+          <button type="button" id="cancel-order-btn" class="secondary">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="message" class="message hidden" role="status"></div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> El Pollo Feliz — Demo</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
